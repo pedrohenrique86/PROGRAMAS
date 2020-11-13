@@ -6,17 +6,18 @@ int main ()
 {
 	setlocale(LC_ALL, "");
 	int opcao1, opcao2, opcao3, qtd, resp;
-	char s, n, S, N;
-	float valor_unit, valor_total;
+	char sim, s, n, nao;
+	float unit, total; 
     int i;
-    valor_total=qtd*valor_unit;
-    
+    unit=0;
+  	
+  
+  
 	
 	printf("100 MISERIA LANCHES - MENU\n");
 	printf("Digite 1 para NOVO PEDIDO: \n");
 	printf("Digite 2 para CONSULTA DE PEDIDO: \n");
 	scanf("%d", &opcao1);
-
 	system("CLS");
 	if (opcao1==1)
 	{
@@ -27,7 +28,7 @@ int main ()
 			printf("(3) X-SALADA\n");
 			printf("(4) X-BACON\n");
 			printf("(5) X-SALADA BACON\n");
-			printf("(6) X-TUDO\n");
+			printf("(6) X-TUDO\n\n");
       printf("<< BEBIDAS >>\n\n");
 			printf("(7) COCA-LATA: \n");
 			printf("(8) COCA 600ML: \n");
@@ -36,24 +37,26 @@ int main ()
 			printf("\nDIGITE A OPÇÃO DESEJADA: ");
 			scanf("%d", &opcao2);
 			system("CLS");
-	}	
-	switch (opcao2)
-	{
-		case 1:
-			printf("DIGITE A QUANTIDADE: \n");
-			scanf("%d", &qtd);
-			printf("DIGITE O VALOR UNITÁRIO: \n");
-			scanf("%f", &valor_unit);
-			printf("QUER ACRESCENTAR ALGO? (S/N): \n");
-			scanf("%d", &resp);
-			if (resp==N)
-			{
-				printf("O TOTAL DO SE PEDIDO É R$%.2f", valor_total);
-			}	
-	
-	
 	}
-
-}
+		
+			switch (opcao2)
+			{
+					case 1:
+					printf("DIGITE A QUANTIDADE DESEJADA: \n");
+					scanf("%d", &qtd);
+					printf("DIGITE O VALOR UNITARIO: \n");
+					scanf("%f", &unit);
+					total=qtd*unit;
+					printf("DESEJA ACRESCENTAR ALGO? (1 para sim e 2 para nao) \n");
+					scanf("%d", &resp);	
+					if (resp==2)
+					{
+					printf("VALOR TOTAL DO PEDIDO = R$%.2f", total);	
+					}	
+			}
+			
+					
+	}	
+	
 
 
